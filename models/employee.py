@@ -12,16 +12,4 @@ class Employee(Model):
         self.department_id = department_id
         self.salon = salon
 
-    def _generate_dict(self):
-        return {
-            'id': self.id,
-            'email': self.email,
-            'name': self.name,
-            'department_type': self.department_type,
-            'department_id': self.department_id,
-            'salon': self.salon
-        }
-
-    def save(self):
-        super().save()
 

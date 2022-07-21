@@ -6,21 +6,14 @@ class Model(ABC):
     file = 'default.json'
 
     def save(self):
-        salon_in_dict_format = self._generate_dict()
+        salon_in_dict_format = self.__dict__
         file = self.get_file_data(self.file)
         file.append(salon_in_dict_format)
         self.save_to_file(file)
 
     def _generate_dict(self):
         return {
-            'id': '',
-            'location': '',
-            'name': '',
-            'director_id': '',
-            'email': '',
-            'department_type': '',
-            'department_id': '',
-            'salon': ''
+            self.__dict__
         }
 
     @classmethod
